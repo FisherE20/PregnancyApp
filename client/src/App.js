@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 
 
@@ -10,7 +10,7 @@ class App extends Component {
         <div className="App-header">
           <h2>Welcome To My Pregnancy Journal</h2>
         </div>
-        <SignIn />
+        <SignUp />
       </div>
     );
   }
