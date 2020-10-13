@@ -4,7 +4,7 @@ import axios from 'axios';
 const Home = props => {
     useEffect(() => {
         axios.get('/api/hello')
-            .then(res => SVGElementInstanceList(res.data))
+            .then(res => setState(res.data))
     }, [])
 
     const [state, setState] = useState('')
