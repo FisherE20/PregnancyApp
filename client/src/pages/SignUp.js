@@ -22,58 +22,35 @@ function Signup() {
       <div className="mt-4">
         <h2>Sign Up</h2>
       </div>
-      <form onSubmit={handleSubmit}>
-        <Container className="mt-3 px-5">
-          <Row className="form-group">
-            <Col size="12">
-              <input
-                className="form-control"
-                type="text"
-                placeholder="Username"
-                name="username"
-                onChange={e => setUsername(e.target.value)}
-              />
-            </Col>
-          </Row>
-          <Row className="form-group">
-            <Col size="12">
-              <input
-                className="form-control"
-                type="password"
-                placeholder="Password"
-                name="password"
-                onChange={e => setPassword(e.target.value)}
-              />
-            </Col>
-          </Row>
-          <Row className="form-group">
-            <Col size="12">
-              <input
-                className="form-control"
-                type="duedate"
-                placeholder="Baby's estimated Due Date"
-                name="duedate"
-                onChange={e => setDuedate(e.target.value)}
-              />
-            </Col>
-          </Row>
-          <Row className="form-group">
-            <Col size="12">
-              <input
-                className="form-control"
-                type="nickname"
-                placeholder="Baby's Nickname"
-                name="nickname"
-                onChange={e => setNickname(e.target.value)}
-              />
-            </Col>
-          </Row>
-          <button className="btn btn-success" type="submit">
-            Submit
-          </button>
-        </Container>
-      </form>
-    </div>
+        <form onSubmit={handleSubmit}>
+        <div class="grid-container">
+          <div class="">
+          <div class="medium-6 cell">
+          <label>Username
+          <input className="form-control" type="text" placeholder="Username" name="username" onChange={e => setUsername(e.target.value)} />
+          </label>
+        </div>
+          <div class="medium-6 cell">
+          <label>Password
+          <input className="form-control" type="text" placeholder="Password" name="password" onChange={e => setPassword(e.target.value)} />
+          </label>
+        </div>
+        <div class="medium-6 cell">
+          <label>Baby's Nickname 
+          <input className="form-control" type="text" placeholder="Optional" name="nickname" onChange={e => setNickname(e.target.value)} />
+          </label>
+        </div>
+        <div class="medium-6 cell">
+          <label>Due Date
+          <input className="form-control" type="text" placeholder="Optional" name="duedate" onChange={e => setDuedate(e.target.value)} />
+          </label>
+        </div>
+      </div>
+      <a href="/" class="button">Submit</a>
+      </div>
+      
+          </form>
+      </div>
   );
 }
 

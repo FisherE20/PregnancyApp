@@ -2,9 +2,7 @@ import React from 'react';
 
 
 function Registeries() {
-   
-   
-    return (
+   return (
         <div class="grid-container">
         <div class="grid-x grid-margin-x small-up-2 medium-up-3">
           <div class="cell">

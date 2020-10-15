@@ -6,8 +6,8 @@ body {
   background-size: 20% ;
 }
 
-.button {
-  float: inline-end;
+button.submit {
+  float: right;
 }
 
 form#cms {

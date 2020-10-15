@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Container from "../components/Container/index";
 import Col from "../components/Col/index";
 import Row from "../components/Row/index";
+import SignUp from "./SignUp"
 
 function SignIn() {
   const [username, setUsername] = useState();
@@ -14,44 +15,31 @@ function SignIn() {
   };
 
   return (
-    <div>
-      <div className="mt-4">
-        <h1>Please sign into your account</h1>
-      </div>
-      <form onSubmit={handleSubmit}>
-        <Container className="mt-3 px-5">
-          <Row className="form-group">
-            <Col size="12">
-              <input
-                className="form-control"
-                type="text"
-                placeholder="Username"
-                name="username"
-                onChange={e => setUsername(e.target.value)}
-              />
-            </Col>
-          </Row>
-          <Row className="form-group">
-            <Col size="12">
-              <input
-                className="form-control"
-                type="password"
-                placeholder="Password"
-                name="password"
-                onChange={e => setPassword(e.target.value)}
-              />
-            </Col>
-          </Row>
-          <button className="btn btn-success" type="submit">
-            Submit
-          </button>
-        </Container>
-        <Container className="mt-4">
-        <p>Not Registered? <a href="#">Create an Account</a></p>
-        </Container>
-      </form>
-    </div>
-  );
-}
+      <div>
+        <div className="mt-4">
+          <h2>Sign Up</h2>
+        </div>
+          <form onSubmit={handleSubmit}>
+          <div class="grid-container">
+            <div class="">
+            <div class="medium-6 cell">
+            <label>Username
+            <input className="form-control" type="text" placeholder="Username" name="username" onChange={e => setUsername(e.target.value)} />
+            </label>
+          </div>
+            <div class="medium-6 cell">
+            <label>Password
+            <input className="form-control" type="text" placeholder="Password" name="password" onChange={e => setPassword(e.target.value)} />
+            </label>
+          </div>
+          <a href="/" class="button">Submit</a>
+          <p>Not Registered? <a href="/signup">Create an Account</a></p>
+          </div>
+          </div>
+            </form>
+          </div>
+        
+    );
+  }
 
 export default SignIn;
