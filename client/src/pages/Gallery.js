@@ -13,7 +13,7 @@ function Gallery() {
     <ul class="photo-container">
       <li class="is-active orbit-slide">
         <figure class="ultrasound-photo">
-          <img class="ultrasound-image" src="https://placehold.it/1200x600/999?text=Slide-1" alt="Space"></img>
+          <img class="ultrasound-image" src="./public/Images/Ultrasound1.pdf" alt="Space"></img>
           <figcaption class="orbit-caption">Baby</figcaption>
         </figure>
       </li>
