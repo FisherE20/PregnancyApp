@@ -131,7 +131,7 @@ class Admin extends React.Component {
    
        return (
            <div>
-               <AppNav />
+               <Nav />
                <button type="button" class="mt-4 mb-2 btn btn-primary btn-sm float-right" onClick={this.addNewPost}>
                    Add New Post
                </button>
@@ -153,7 +153,7 @@ class Admin extends React.Component {
            </div >
        );
    
-}
+    }
 
 }
 

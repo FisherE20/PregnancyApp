@@ -19,7 +19,7 @@ function Registeries() {
               <img src="./Images/BuyBuyBaby.jpg"></img>
               <div class="card-section">
                 <p>You'll find our registry by clicking on the button below.</p>
-                <a class="button primary" href="HTTPs://www.BuyBuyBaby.com">View</a>
+                <a class="button primary" href="HTTPS://www.buybuybaby.com">View</a>
               </div>
             </div>
           </div>

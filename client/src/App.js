@@ -19,7 +19,7 @@ function App() {
         <Nav />
         <Jumbotron />
         <Switch> 
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={SignIn} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/home" component={Home} />

@@ -13,25 +13,25 @@ function Gallery() {
     <ul class="photo-container">
       <li class="is-active orbit-slide">
         <figure class="ultrasound-photo">
-          <img class="ultrasound-image" src="./public/Images/Ultrasound1.pdf" alt="Space"></img>
+          <img class="ultrasound-image" src="./public/Images/View1.jpg" alt="Baby"></img>
           <figcaption class="orbit-caption">Baby</figcaption>
         </figure>
       </li>
       <li class="orbit-slide">
         <figure class="ultrasound-photo">
-          <img class="ultrasound-image" src="https://placehold.it/1200x600/888?text=Slide-2" alt="Space"></img>
+          <img class="ultrasound-image" src="./public/Images/View2.jpg" alt="Baby"></img>
           <figcaption class="orbit-caption">Baby's Heart Beat</figcaption>
         </figure>
       </li>
       <li class="orbit-slide">
         <figure class="ultrasound-photo">
-          <img class="ultrasound-image" src="https://placehold.it/1200x600/777?text=Slide-3" alt="Space"></img>
+          <img class="ultrasound-image" src="./public/Images/View3.jpg" alt="Baby"></img>
           <figcaption class="orbit-caption">Baby's 2nd picture</figcaption>
         </figure>
       </li>
       <li class="orbit-slide">
         <figure class="ultrasound-photo">
-          <img class="ultrasound-image" src="https://placehold.it/1200x600/666&text=Slide-4" alt="Space"></img>
+          <img class="ultrasound-image" src="./public/Images/HeartBeat.jpg" alt="Baby"></img>
           <figcaption class="orbit-caption">Baby's 3rd picture</figcaption>
         </figure>
       </li>
