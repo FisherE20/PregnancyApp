@@ -28,12 +28,16 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
 
-    currentScore: {
-      type: DataTypes.INTEGER,
-      allowNull: true
+    nickName: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: false,
+      validate: {
+        isAlphanumeric: true
+      }
     },
 
-    highScore: {
+    dueDate: {
       type: DataTypes.INTEGER,
       allowNull: true
     }

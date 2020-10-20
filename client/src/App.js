@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import Registeries from "./pages/Registeries";
 import Gallery from "./pages/Gallery";
+import Journal from "./pages/Journal";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron"
 
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/gallery" component={Gallery} />
+          <Route exact path="/journal" component={Journal} />
           <Route exact path="/registeries" component={Registeries} />
         </Switch> 
       </div>

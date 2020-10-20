@@ -1,161 +1,27 @@
-import React from "react";
+import React from 'react';
 
 function Journal() {
-    'use strict';
-const e = React.createElement;
-
-const AppNav = () => (
-   <nav class="navbar navbar-dark bg-dark">
-       <a class="navbar-brand" href="#">My Blog</a>
-       <a role="button" class="btn btn-outline-info navbar-btn" href="/logout">Logout</a>
-   </nav>
-);
-
-const Card = ({ item, handleSubmit, handleEdit, handleDelete, handleCancel }) => {
-   const { title, content, editMode } = item;
-
-   if (editMode) {
-       return (
-           <div class="card mt-4" Style="width: 100%;">
-               <div class="card-body">
-                   <form onSubmit={handleSubmit}>
-                       <input type="hidden" name="id" value={item.id} />
-                       <div class="input-group input-group-sm mb-3">
-                           <input type="text" name="title" class="form-control" placeholder="Title" defaultValue={title} />
-                       </div>
-                       <div class="input-group input-group-sm mb-3">
-                           <textarea name="content" class="form-control" placeholder="Content" defaultValue={content}></textarea>
-                       </div>
-                       <button type="button" class="btn btn-outline-secondary btn-sm" onClick={handleCancel}>Cancel</button>
-                       <button type="submit" class="btn btn-info btn-sm ml-2">Save</button>
-                   </form>
-               </div>
-           </div>
-       )
-   } else {
-       return (
-           <div class="card mt-4" Style="width: 100%;">
-               <div class="card-body">
-                   <h5 class="card-title">{title || "No Title"}</h5>
-                   <p class="card-text">{content || "No Content"}</p>
-                   <button type="button" class="btn btn-outline-danger btn-sm" onClick={handleDelete}>Delete</button>
-                   <button type="submit" class="btn btn-info btn-sm ml-2" onClick={handleEdit}>Edit</button>
-               </div>
-           </div>
-       )
-   }
+    return (
+        <div class="container">
+          <h1 class="mb-4">Journal Entries</h1>
+          <a class="button primary" href="/journal/new">New Entry</a>  
+        
+        
+        <div class="card">   
+        <div class="card-divider"> 
+             <h3>First Ultrasound</h3>
+        </div>   
+        <div class="card-section">
+            <h4>Oct 2, 2020</h4>
+            <p>Baby is healthy measuring at 7 weeks 6days. Heart Beat is 156 bpm. The doctor's estimated due date is correct at May 13.</p>
+            <a class="button primary" href="#">Read More</a>
+            <a class="button success" href="#">Edit</a>
+            <a class="button alert" href="#">Delete</a>
+        </div>
+        </div>  
+    </div> 
+    );
 }
-
-class Admin extends React.Component {
-   constructor(props) {
-       super(props);
-       this.state = { data: [] };
-   }
-
-   componentDidMount() {
-       this.getPosts();
-   }
-
-   getPosts = async () => {
-       const response = await fetch('/posts');
-       const data = await response.json();
-       data.forEach(item => item.editMode = false);
-       this.setState({ data })
-   }
-
-   addNewPost = () => {
-       const data = this.state.data;
-       data.unshift({
-           editMode: true,
-           title: "",
-           content: ""
-       })
-       this.setState({ data })
-   }
-
-   handleCancel = async () => {
-       await this.getPosts();
-   }
-
-   handleEdit = (postId) => {
-       const data = this.state.data.map((item) => {
-           if (item.id === postId) {
-               item.editMode = true;
-           }
-           return item;
-       });
-       this.setState({ data });
-   }
-
-   handleDelete = async (postId) => {
-       await fetch(`/posts/${postId}`, {
-           method: 'DELETE',
-           headers: {
-               'content-type': 'application/json',
-               accept: 'application/json',
-           },
-       });
-       await this.getPosts();
-   }
-
-   handleSubmit = async (event) => {
-       event.preventDefault();
-       const data = new FormData(event.target);
-
-       const body = JSON.stringify({
-           title: data.get('title'),
-           content: data.get('content'),
-       });
-
-       const headers = {
-           'content-type': 'application/json',
-           accept: 'application/json',
-       };
-
-       if (data.get('id')) {
-           await fetch(`/posts/${data.get('id')}`, {
-               method: 'PUT',
-               headers,
-               body,
-           });
-       } else {
-           await fetch('/posts', {
-               method: 'POST',
-               headers,
-               body,
-           });
-       }
-       await this.getPosts();
-   }
-
-   
-       return (
-           <div>
-               <Nav />
-               <button type="button" class="mt-4 mb-2 btn btn-primary btn-sm float-right" onClick={this.addNewPost}>
-                   Add New Post
-               </button>
-               {
-                   this.state.data.length > 0 ? (
-                       this.state.data.map(item =>
-                           <Card item={item}
-                               handleSubmit={this.handleSubmit}
-                               handleEdit={this.handleEdit.bind(this, item.id)}
-                               handleDelete={this.handleDelete.bind(this, item.id)}
-                               handleCancel={this.handleCancel}
-                           />)
-                   ) : (
-                           <div class="card mt-5 col-sm">
-                               <div class="card-body">You don't have any posts. Use the "Add New Post" button to add some new posts!</div>
-                           </div>
-                       )
-               }
-           </div >
-       );
-   
-    }
-
-}
-
 
 export default Journal;
+
