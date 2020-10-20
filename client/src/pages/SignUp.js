@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Axios from "axios";
+import axios from "axios";
 // import Container from "../components/Container/index";
 // import Col from "../components/Col/index";
 // import Row from "../components/Row/index";
@@ -21,19 +21,18 @@ function Signup() {
     console.log("nickname is " + nickname);
   };
 
-  const register = () => {
-    Axios({
-      method: "POST",
-      data: {
+  const register = (e) => {
+    e.preventDefault();
+    axios.post(
+     "/api/signup",
+     {
         username: signupusername,
         email: signupemail,
         password: signuppassword,
         duedate: duedate,
         nickname: nickname
-      },
-      withCredentials: true,
-      url: "http://localhost:3001/signup"
-    }).then((res) => console.log(res));
+      }
+    ).then((res) => console.log(res));
   };
 
   return (
@@ -41,7 +40,7 @@ function Signup() {
       <div className="mt-4">
         <h2>Sign Up</h2>
       </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={register}>
         <div className="grid-container">
           <div className="">
           <div className="medium-6 cell">
