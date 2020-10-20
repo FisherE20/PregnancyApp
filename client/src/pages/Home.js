@@ -1,11 +1,12 @@
 import React, {useRef, useState, useEffect} from 'react';
- 
+import Axios from "axios"; 
 
 function Home() {
     const [timerDays, setTimerDays] = useState('00');
     const [timerHours, setTimerHours] = useState('00');
     const [timerMinutes, setTimerMinutes] = useState('00');
     const [timerSeconds, setTimerSeconds] = useState('00');
+    // const [data, setData] = useState(null);
 
     let interval = useRef();
 
@@ -41,12 +42,24 @@ function Home() {
             clearInterval(interval.current);
         };
     });
+
+    // const getUser = () => {
+    //     Axios({
+    //         method: "GET",
+    //         withCredentials: true,
+    //         url: "http://localhost:3000/user",
+    //     }).then((res) => {
+    //         setData(res.data);
+    //         console.log(res.data);
+    //     });
+    // };
+
     return(
         <section className="timer-container">
             <section className="timer">
                 <div>
                     <span className="mdi mdi-calendar-clock"></span>
-                    <h2>Our little Mino is due to arrive in:</h2>
+                     <h2>Our little Mino is due to arrive in:</h2>
                 </div>
                 <div>
                     <section>

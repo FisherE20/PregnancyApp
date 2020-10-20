@@ -9,8 +9,8 @@ module.exports = function(app) {
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
-      email: req.user.email,
-      id: req.user.id
+      email: req.users.email,
+      id: req.users.id
     });
   });
 
@@ -38,8 +38,8 @@ module.exports = function(app) {
   });
 
   // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", (req, res) => {
-    if (!req.user) {
+  app.get("/api/users", (req, res) => {
+    if (!req.users) {
       // The user is not logged in, send back an empty object
       res.json({});
     } else {
@@ -48,7 +48,9 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-        username:  req.user.username
+        username:  req.users.username,
+        duedate: req.users.duedate,
+        nickname: req.users.nickname
       });
     }
   });

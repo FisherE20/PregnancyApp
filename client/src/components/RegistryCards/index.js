@@ -3,35 +3,35 @@ import "./style.css";
 
 function RegistryCard(props) {
   return (
-    <div class="grid-container">
-  <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-    <div class="cell">
-      <div class="card">
+    <div className="grid-container">
+  <div className="grid-x grid-margin-x small-up-2 medium-up-3">
+    <div className="cell">
+      <div className="card">
         <img  alt={props.name} src={props.image}>
-        <div class="card-section">
+        <div className="card-section">
         <h4>{props.name}</h4>
           <p>{props.description}</p>
-          <a href= {props.url} class="button">View</a>
+          <a href= {props.url} className="button">View</a>
         </div>
       </div>
     </div>
-    <div class="cell">
-      <div class="card">
+    <div className="cell">
+      <div className="card">
         <img {props.name} src={props.image}>
-        <div class="card-section">
+        <div className="card-section">
           <h4>{props.name}</h4>
           <p>{props.description}</p>
-          <a href= {props.url} class="button">View</a>
+          <a href= {props.url} className="button">View</a>
         </div>
       </div>
     </div>
-    <div class="cell">
-      <div class="card">
+    <div className="cell">
+      <div className="card">
         <img alt={props.name} src={props.image}>
-        <div class="card-section">
+        <div className="card-section">
           <h4>{props.name}</h4>
           <p>{props.description}</p>
-          <a href= {props.url} class="button">View</a>
+          <a href= {props.url} className="button">View</a>
         </div>
       </div>
     </div>

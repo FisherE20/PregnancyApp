@@ -3,32 +3,32 @@ import React from 'react';
 
 function Registeries() {
    return (
-        <div class="grid-container">
-        <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-          <div class="cell">
-            <div class="card">
+        <div className="grid-container">
+        <div className="grid-x grid-margin-x small-up-2 medium-up-3">
+          <div className="cell">
+            <div className="card">
               <img src="./Images/Amazon.jpg"></img>
-              <div class="card-section">
+              <div className="card-section">
                 <p>You'll find our registry by clicking on the button below.</p>
-                <a class="button primary" href="HTTPS://www.amazon.com">View</a>
+                <a className="button primary" href="HTTPS://www.amazon.com">View</a>
               </div>
             </div>
           </div>
-          <div class="cell">
-            <div class="card">
+          <div className="cell">
+            <div className="card">
               <img src="./Images/BuyBuyBaby.jpg"></img>
-              <div class="card-section">
+              <div className="card-section">
                 <p>You'll find our registry by clicking on the button below.</p>
-                <a class="button primary" href="HTTPS://www.buybuybaby.com">View</a>
+                <a className="button primary" href="HTTPS://www.buybuybaby.com">View</a>
               </div>
             </div>
           </div>
-          <div class="cell">
-            <div class="card">
+          <div className="cell">
+            <div className="card">
               <img src="./Images/Target.jpg"></img>
-              <div class="card-section">
+              <div className="card-section">
                 <p>You'll find our registry by clicking on the button below.</p>
-                <a class="button primary" href="HTTPS://www.target.com">View</a>
+                <a className="button primary" href="HTTPS://www.target.com">View</a>
               </div>
             </div>
           </div>

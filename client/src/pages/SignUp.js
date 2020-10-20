@@ -1,20 +1,39 @@
 import React, { useState } from "react";
-import Container from "../components/Container/index";
-import Col from "../components/Col/index";
-import Row from "../components/Row/index";
+import Axios from "axios";
+// import Container from "../components/Container/index";
+// import Col from "../components/Col/index";
+// import Row from "../components/Row/index";
 
 function Signup() {
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [signupusername, setUsername] = useState();
+  const [signupemail, setEmail] = useState();
+  const [signuppassword, setPassword] = useState();
   const [duedate, setDuedate] = useState();
   const [nickname, setNickname] = useState();
+  
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log("username is " + username);
-    console.log("password is " + password);
+    console.log("username is " + signupusername);
+    console.log("email is " + signupemail);
+    console.log("password is " + signuppassword);
     console.log("duedate is " + duedate);
     console.log("nickname is " + nickname);
+  };
+
+  const register = () => {
+    Axios({
+      method: "POST",
+      data: {
+        username: signupusername,
+        email: signupemail,
+        password: signuppassword,
+        duedate: duedate,
+        nickname: nickname
+      },
+      withCredentials: true,
+      url: "http://localhost:3001/signup"
+    }).then((res) => console.log(res));
   };
 
   return (
@@ -23,31 +42,36 @@ function Signup() {
         <h2>Sign Up</h2>
       </div>
         <form onSubmit={handleSubmit}>
-        <div class="grid-container">
-          <div class="">
-          <div class="medium-6 cell">
+        <div className="grid-container">
+          <div className="">
+          <div className="medium-6 cell">
           <label>Username
-          <input className="form-control" type="text" placeholder="Username" name="username" onChange={e => setUsername(e.target.value)} />
+          <input className="form-control" type="text" placeholder="Username" name="username" onChange={(e) => setUsername(e.target.value)} />
           </label>
         </div>
-          <div class="medium-6 cell">
+        <div className="medium-6 cell">
+          <label>Email
+          <input className="form-control" type="text" placeholder="Email" name="email" onChange={(e) => setEmail(e.target.value)} />
+          </label>
+        </div>
+          <div className="medium-6 cell">
           <label>Password
-          <input className="form-control" type="text" placeholder="Password" name="password" onChange={e => setPassword(e.target.value)} />
+          <input className="form-control" type="text" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
           </label>
         </div>
-        <div class="medium-6 cell">
+        <div className="medium-6 cell">
           <label>Baby's Nickname 
-          <input className="form-control" type="text" placeholder="Optional" name="nickname" onChange={e => setNickname(e.target.value)} />
+          <input className="form-control" type="text" placeholder="Optional" name="nickname" onChange={(e) => setNickname(e.target.value)} />
           </label>
         </div>
-        <div class="medium-6 cell">
+        <div className="medium-6 cell">
           <label>Due Date
-          <input className="form-control" type="text" placeholder="Optional" name="duedate" onChange={e => setDuedate(e.target.value)} />
+          <input className="form-control" type="text" placeholder="Optional" name="duedate" onChange={(e) => setDuedate(e.target.value)} />
           </label>
         </div>
       </div>
-      <a href="/" class="button">Submit</a>
-      </div>
+      <a href="/" className="button" onClick={register}>Submit</a>
+      </div> 
       
           </form>
       </div>
