@@ -59,7 +59,7 @@ function Home() {
             <section className="timer">
                 <div>
                     <span className="mdi mdi-calendar-clock"></span>
-                     <h2>Our little {data.nickname} is due to arrive in:</h2>
+                     <h2>Our little Mino is due to arrive in:</h2>
                 </div>
                 <div>
                     <section>
