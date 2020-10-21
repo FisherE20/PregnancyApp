@@ -1,5 +1,5 @@
 import React, {useRef, useState, useEffect} from 'react';
-import Axios from "axios"; 
+// import Axios from "axios"; 
 
 function Home() {
     const [timerDays, setTimerDays] = useState('00');

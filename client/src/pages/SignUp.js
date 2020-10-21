@@ -12,14 +12,14 @@ function Signup() {
   const [nickname, setNickname] = useState();
   
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log("username is " + signupusername);
-    console.log("email is " + signupemail);
-    console.log("password is " + signuppassword);
-    console.log("duedate is " + duedate);
-    console.log("nickname is " + nickname);
-  };
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   console.log("username is " + signupusername);
+  //   console.log("email is " + signupemail);
+  //   console.log("password is " + signuppassword);
+  //   console.log("duedate is " + duedate);
+  //   console.log("nickname is " + nickname);
+  // };
 
   const register = (e) => {
     e.preventDefault();

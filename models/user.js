@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
 
-    nickName: {
+    nickname: {
       type: DataTypes.STRING,
       allowNull: true,
       unique: false,
@@ -37,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
 
-    dueDate: {
+    duedate: {
       type: DataTypes.INTEGER,
       allowNull: true
     }
