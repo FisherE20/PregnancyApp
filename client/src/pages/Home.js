@@ -81,7 +81,6 @@ function Home() {
                         <p>{timerSeconds}</p>
                         <p><small>Seconds</small></p>
                     </section>
-                    <span>:</span>
                 </div>
             </section>
         </section>
